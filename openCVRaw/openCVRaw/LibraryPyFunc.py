@@ -19,6 +19,8 @@ def write_to_csv_one_by_one(filename, data):
 print("Github")
 def convertToGray(img):
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    edges = cv2.Canny(gray,50,150,apertureSize = 3)
+    print(edges)
     return gray
 
 def ProcessFile(filename):
@@ -41,6 +43,6 @@ def ProcessFile(filename):
 
 
 ### Main Func
-sPath = "D:\\openCVRaw\\img\\"  
+sPath = "D:\\Image-Processing\\openCVRaw\\img\\"  
 ProcessFile(sPath+'14264320');
 print("Program End")
