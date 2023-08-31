@@ -1,0 +1,35 @@
+﻿  main.cpp
+D:\openCVProject\openCVProject\main.cpp(189,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(221,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(410,58): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(425,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(436,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(437,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(489,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(503,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(508,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(524,30): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(669,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(723,40): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(724,40): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(812,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(814,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(853,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(855,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(883,33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(884,33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(885,33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(910,36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(911,36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(940,74): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(942,74): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(957,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(959,44): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(961,59): warning C4244: 'argument': conversion from 'double' to 'const unsigned __int64', possible loss of data
+D:\openCVProject\openCVProject\main.cpp(1274,13): warning C4551: function call missing argument list
+  Generating code
+  40 of 472 functions ( 8.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    13 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  openCVProject.vcxproj -> D:\openCVProject\x64\Release\openCVProject.exe
