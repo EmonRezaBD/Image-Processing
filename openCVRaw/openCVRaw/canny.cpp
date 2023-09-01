@@ -2,14 +2,13 @@
 
 // TODO: implement a function to read and write the images.
 
-std::vector<int> cannyEdgeDetection(std::string readLocation, std::string writeLocation, double lowerThreshold, double higherThreshold) {
-    std::vector<int> pixelsCanny;
+cv::Mat cannyEdgeDetection(std::string readLocation, std::string writeLocation, double lowerThreshold, double higherThreshold) {
+   
+    cv::Mat matImage;
 
     if (readLocation == writeLocation) {
         std::cout << "The read file and save file locations cannot be the same.\n";
-        //return;
-        //change by reza
-        return pixelsCanny;
+        return matImage;
     }
     cv::Mat img = cv::imread(readLocation);
 
@@ -47,16 +46,17 @@ std::vector<int> cannyEdgeDetection(std::string readLocation, std::string writeL
     // cv::imshow("Grayscale", imgGrayscale);
 
     // CANNY_FILTER:
-    pixelsCanny = cannyFilter(pixelsGray, sizeRows, sizeCols, 1, lowerThreshold, higherThreshold);
+    std::vector<int> pixelsCanny = cannyFilter(pixelsGray, sizeRows, sizeCols, 1, lowerThreshold, higherThreshold);
+    
+
+    matImage = arrayToImg(pixelsCanny, pixelPtrGray, sizeRows, sizeCols, 1);
+    //cv::imwrite(writeLocation, imgGrayscale);
+
     //chage by reza
-    return pixelsCanny;
+    return matImage;
+    //cv::imshow("CannyEdgeDetection", imgGrayscale);
+    //cv::waitKey(0);
 
-    /*arrayToImg(pixelsCanny, pixelPtrGray, sizeRows, sizeCols, 1);
-
-    cv::imshow("CannyEdgeDetection", imgGrayscale);
-    cv::waitKey(0);
-
-    cv::imwrite(writeLocation, imgGrayscale);*/
 }
 
 std::vector<int> imgToArray(cv::Mat img, uint8_t* pixelPtr, int sizeRows, int sizeCols, int sizeDepth) {
@@ -73,7 +73,7 @@ std::vector<int> imgToArray(cv::Mat img, uint8_t* pixelPtr, int sizeRows, int si
     return pixels;
 }
 
-void arrayToImg(std::vector<int>& pixels, uint8_t* pixelPtr, int sizeRows, int sizeCols, int sizeDepth) {
+cv::Mat arrayToImg(std::vector<int>& pixels, uint8_t* pixelPtr, int sizeRows, int sizeCols, int sizeDepth) {
     for (int i = 0; i < sizeRows; i++) {
         for (int j = 0; j < sizeCols; j++) {
             for (int k = 0; k < sizeDepth; k++) {
@@ -82,7 +82,9 @@ void arrayToImg(std::vector<int>& pixels, uint8_t* pixelPtr, int sizeRows, int s
             }
         }
     }
-    return;
+    //By reza
+    cv::Mat matImage(sizeRows, sizeCols, CV_8U, &pixels[0]);
+    return matImage;
 }
 
 std::vector<int> gaussianBlur(std::vector<int>& pixels, std::vector<std::vector<double>>& kernel, double kernelConst, int sizeRows, int sizeCols, int sizeDepth) {
