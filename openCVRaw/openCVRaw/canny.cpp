@@ -49,7 +49,7 @@ cv::Mat cannyEdgeDetection(std::string readLocation, std::string writeLocation, 
     std::vector<int> pixelsCanny = cannyFilter(pixelsGray, sizeRows, sizeCols, 1, lowerThreshold, higherThreshold);
     
 
-    matImage = arrayToImg(pixelsCanny, pixelPtrGray, sizeRows, sizeCols, 1);
+    arrayToImg(pixelsCanny, pixelPtrGray, sizeRows, sizeCols, 1);
     //cv::imwrite(writeLocation, imgGrayscale);
 
     //chage by reza
@@ -73,7 +73,7 @@ std::vector<int> imgToArray(cv::Mat img, uint8_t* pixelPtr, int sizeRows, int si
     return pixels;
 }
 
-cv::Mat arrayToImg(std::vector<int>& pixels, uint8_t* pixelPtr, int sizeRows, int sizeCols, int sizeDepth) {
+void arrayToImg(std::vector<int>& pixels, uint8_t* pixelPtr, int sizeRows, int sizeCols, int sizeDepth) {
     for (int i = 0; i < sizeRows; i++) {
         for (int j = 0; j < sizeCols; j++) {
             for (int k = 0; k < sizeDepth; k++) {
@@ -83,8 +83,28 @@ cv::Mat arrayToImg(std::vector<int>& pixels, uint8_t* pixelPtr, int sizeRows, in
         }
     }
     //By reza
-    cv::Mat matImage(sizeRows, sizeCols, CV_8U, &pixels[0]);
-    return matImage;
+    std::ofstream myfile;
+    myfile.open("D:/test.csv");
+    for (int i = 0; i < sizeRows; i++)
+    {
+        for (int j = 0; j < sizeCols; j++)
+        {
+            for (int k = 0; k < sizeDepth; k++)
+            {
+                myfile << pixels[i * sizeCols * sizeDepth + j * sizeDepth + (sizeDepth - 1 - k)];
+                if (j == sizeCols - 1 && k == sizeDepth - 1)
+                {
+                    myfile << "\n";
+                }
+                else
+                {
+                    myfile << ",";
+                }
+            }
+        }
+    }
+    myfile.close();
+    std::cout << "Success" << std::endl;
 }
 
 std::vector<int> gaussianBlur(std::vector<int>& pixels, std::vector<std::vector<double>>& kernel, double kernelConst, int sizeRows, int sizeCols, int sizeDepth) {
